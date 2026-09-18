@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a class="logo" href="index.html">
+            Shop<span>Ease</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+
+            <a href="cart.html">
+                Cart
+                <span id="cartCount" class="badge">0</span>
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <button id="logoutBtn">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- ORDERS PAGE -->
+    <main class="orders-page">
+
+        <div class="orders-heading">
+
+            <p class="orders-eyebrow">
+                ACCOUNT
+            </p>
+
+            <h1>
+                My Orders
+            </h1>
+
+            <p>
+                Track and view your recent ShopEase purchases.
+            </p>
+
+        </div>
+
+
+        <!-- Orders will be inserted here -->
+        <div id="ordersList" class="orders-list">
+
+            <div class="orders-loading">
+                Loading your orders...
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/app.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script src="js/orders.js"></script>
+
+</body>
+
+</html>

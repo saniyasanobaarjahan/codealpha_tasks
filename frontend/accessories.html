@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accessories - ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="animated-border"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            🛍️ ShopEase
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="fashion.html">Fashion</a>
+            <a href="accessories.html" class="active">Accessories</a>
+            <a href="orders.html">My Orders</a>
+
+            <a href="cart.html" class="cart-link">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </a>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- Accessories Hero -->
+    <section class="fashion-hero">
+
+        <div class="fashion-hero-content">
+
+            <p class="small-title">
+                ✨ ACCESSORIZE YOUR STYLE
+            </p>
+
+            <h1>
+                Complete Your Look 💍
+            </h1>
+
+            <p>
+                Discover jewellery, watches, handbags,
+                sunglasses and more.
+            </p>
+
+        </div>
+
+        <div class="fashion-hero-icon">
+            💎
+        </div>
+
+    </section>
+
+
+    <!-- AI Assistant -->
+    <section class="fashion-ai">
+
+        <div class="ai-icon">
+            🤖
+        </div>
+
+        <div class="ai-content">
+
+            <span class="ai-label">
+                SHOP EASE AI
+            </span>
+
+            <h2 id="aiHeading">
+                Hi Saniya! What accessory are you looking for today? 💜
+            </h2>
+
+            <p>
+                Tell me what you need and I'll help you find the perfect match.
+            </p>
+
+            <div class="ai-buttons">
+
+                <button onclick="startAccessoriesAI()">
+                    🎤 Talk to AI
+                </button>
+
+                <button onclick="document.getElementById('accessoryProducts').scrollIntoView({behavior:'smooth'})">
+                    💍 Browse Accessories
+                </button>
+
+            </div>
+
+            <div id="aiMessage" class="ai-message">
+                Click <strong>Talk to AI</strong> and tell me what you're looking for.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Accessory Collections -->
+    <section class="fashion-section">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>Accessory Collections</h2>
+
+            <span>
+                Choose what you want to shop
+            </span>
+
+        </div>
+
+
+        <div class="fashion-gender-grid">
+
+            <button
+                class="gender-card"
+                onclick="filterAccessorySubcategory('Jewellery')">
+
+                <div class="gender-icon">
+                    💍
+                </div>
+
+                <h3>
+                    Jewellery
+                </h3>
+
+                <p>
+                    Earrings, necklaces, rings & more
+                </p>
+
+            </button>
+
+
+            <button
+                class="gender-card"
+                onclick="filterAccessorySubcategory('Bags')">
+
+                <div class="gender-icon">
+                    👜
+                </div>
+
+                <h3>
+                    Bags
+                </h3>
+
+                <p>
+                    Handbags & stylish bags
+                </p>
+
+            </button>
+
+
+            <button
+                class="gender-card"
+                onclick="filterAccessorySubcategory('Watches')">
+
+                <div class="gender-icon">
+                    ⌚
+                </div>
+
+                <h3>
+                    Watches
+                </h3>
+
+                <p>
+                    Classic & stylish watches
+                </p>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Jewellery Types -->
+    <section class="fashion-section">
+
+        <div class="section-heading">
+
+            <p>JEWELLERY</p>
+
+            <h2>Find Your Jewellery</h2>
+
+            <span>
+                Add a little sparkle to your look ✨
+            </span>
+
+        </div>
+
+
+        <div class="fashion-type-grid">
+
+            <button onclick="filterAccessoryType('Earrings')">
+                💎
+                <span>Earrings</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Necklace')">
+                📿
+                <span>Necklaces</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Bracelet')">
+                💫
+                <span>Bracelets</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Rings')">
+                💍
+                <span>Rings</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Bangles')">
+                ✨
+                <span>Bangles</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Anklet')">
+                🦶
+                <span>Anklets</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Maang Tikka')">
+                👑
+                <span>Maang Tikka</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Watch')">
+                ⌚
+                <span>Watches</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Handbag')">
+                👜
+                <span>Handbags</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Sunglasses')">
+                🕶️
+                <span>Sunglasses</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Wallet')">
+                👛
+                <span>Wallets</span>
+            </button>
+
+            <button onclick="filterAccessoryType('Belt')">
+                🧷
+                <span>Belts</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section
+        id="accessoryProducts"
+        class="fashion-section products-section">
+
+        <div class="section-heading">
+
+            <p>SHOP NOW</p>
+
+            <h2 id="accessoryTitle">
+                All Accessories
+            </h2>
+
+            <span id="accessorySubtitle">
+                Explore our accessory collection
+            </span>
+
+        </div>
+
+
+        <div class="fashion-filters">
+
+            <button onclick="loadAccessoryProducts()">
+                All
+            </button>
+
+            <button onclick="filterAccessorySubcategory('Jewellery')">
+                Jewellery
+            </button>
+
+            <button onclick="filterAccessorySubcategory('Bags')">
+                Bags
+            </button>
+
+            <button onclick="filterAccessorySubcategory('Watches')">
+                Watches
+            </button>
+
+            <button onclick="filterAccessorySubcategory('Sunglasses')">
+                Sunglasses
+            </button>
+
+            <button onclick="filterAccessorySubcategory('Wallets')">
+                Wallets
+            </button>
+
+        </div>
+
+
+        <div
+            id="accessoryProductsGrid"
+            class="products-grid">
+
+            <div class="loading">
+                Loading accessories...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            🛍️ ShopEase
+        </div>
+
+        <p>
+            Your simple and smarter way to shop online.
+        </p>
+
+        <p class="copyright">
+            © 2026 ShopEase. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/accessories.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fashion - ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Animated Border -->
+    <div class="animated-border"></div>
+
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            🛍️ ShopEase
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="fashion.html" class="active">Fashion</a>
+            <a href="orders.html">My Orders</a>
+
+            <a href="cart.html" class="cart-link">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </a>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- Fashion Hero -->
+    <section class="fashion-hero">
+
+        <div class="fashion-hero-content">
+
+            <p class="small-title">
+                ✨ SHOP FASHION
+            </p>
+
+            <h1>
+                Find Your Perfect Style 👗
+            </h1>
+
+            <p>
+                Discover fashion for women, men and kids.
+                From everyday outfits to wedding looks.
+            </p>
+
+        </div>
+
+        <div class="fashion-hero-icon">
+            👗
+        </div>
+
+    </section>
+
+
+    <!-- AI Assistant -->
+    <section class="fashion-ai">
+
+        <div class="ai-icon">
+            🤖
+        </div>
+
+        <div class="ai-content">
+
+            <span class="ai-label">
+                SHOP EASE AI
+            </span>
+
+            <h2>
+                Hi Saniya! What kind of fashion are you thinking about? 💜
+            </h2>
+
+            <p>
+                Tell me what you need and I'll help you find something you'll love.
+            </p>
+
+            <div class="ai-buttons">
+    <button onclick="document.getElementById('fashionProducts').scrollIntoView({behavior:'smooth'})">
+        🛍️ Browse Fashion
+    </button>
+</div>
+
+               
+
+          
+
+    </section>
+
+
+    <!-- Shop For -->
+    <section class="fashion-section">
+
+        <div class="section-heading">
+
+            <p>SHOP FOR</p>
+
+            <h2>Who are you shopping for?</h2>
+
+            <span>
+                Choose a collection
+            </span>
+
+        </div>
+
+
+        <div class="fashion-gender-grid">
+
+            <button
+                class="gender-card"
+                onclick="filterFashion('Women')">
+
+                <div class="gender-icon">
+                    👩
+                </div>
+
+                <h3>
+                    Women
+                </h3>
+
+                <p>
+                    Dresses, sarees, kurtis & more
+                </p>
+
+            </button>
+
+
+            <button
+                class="gender-card"
+                onclick="filterFashion('Men')">
+
+                <div class="gender-icon">
+                    👨
+                </div>
+
+                <h3>
+                    Men
+                </h3>
+
+                <p>
+                    Shirts, jeans, kurtas & more
+                </p>
+
+            </button>
+
+
+            <button
+                class="gender-card"
+                onclick="filterFashion('Kids')">
+
+                <div class="gender-icon">
+                    🧒
+                </div>
+
+                <h3>
+                    Kids
+                </h3>
+
+                <p>
+                    Boys, girls & baby fashion
+                </p>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Fashion Types -->
+    <section class="fashion-section">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>Fashion Categories</h2>
+
+            <span>
+                Find exactly what you're looking for
+            </span>
+
+        </div>
+
+
+        <div class="fashion-type-grid">
+
+            <button onclick="filterType('Saree')">
+                👘
+                <span>Sarees</span>
+            </button>
+
+            <button onclick="filterType('Kurti')">
+                👗
+                <span>Kurtis</span>
+            </button>
+
+            <button onclick="filterType('Anarkali')">
+                💃
+                <span>Anarkali</span>
+            </button>
+
+            <button onclick="filterType('Lehenga')">
+                👰
+                <span>Lehengas</span>
+            </button>
+
+            <button onclick="filterType('Gown')">
+                👗
+                <span>Gowns</span>
+            </button>
+
+            <button onclick="filterType('Western Dress')">
+                👚
+                <span>Western Dresses</span>
+            </button>
+
+            <button onclick="filterType('Top')">
+                👕
+                <span>Tops</span>
+            </button>
+
+            <button onclick="filterType('Jeans')">
+                👖
+                <span>Jeans</span>
+            </button>
+
+            <button onclick="filterType('Shirt')">
+                👔
+                <span>Shirts</span>
+            </button>
+
+            <button onclick="filterType('T-Shirt')">
+                👕
+                <span>T-Shirts</span>
+            </button>
+
+            <button onclick="filterType('Kurta')">
+                🧥
+                <span>Kurtas</span>
+            </button>
+
+            <button onclick="filterType('Hoodie')">
+                🧥
+                <span>Hoodies</span>
+            </button>
+
+            <button onclick="filterType('Blazer')">
+                🤵
+                <span>Blazers</span>
+            </button>
+
+            <button onclick="filterType('Jumpsuit')">
+                👗
+                <span>Jumpsuits</span>
+            </button>
+
+            <button onclick="filterType('Party Dress')">
+                🎉
+                <span>Party Wear</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section
+        id="fashionProducts"
+        class="fashion-section products-section">
+
+        <div class="section-heading">
+
+            <p>SHOP NOW</p>
+
+            <h2 id="fashionTitle">
+                All Fashion
+            </h2>
+
+            <span id="fashionSubtitle">
+                Explore our fashion collection
+            </span>
+
+        </div>
+
+
+        <!-- Filters -->
+
+        <div class="fashion-filters">
+
+            <button onclick="loadFashionProducts()">
+                All
+            </button>
+
+            <button onclick="filterFashion('Women')">
+                Women
+            </button>
+
+            <button onclick="filterFashion('Men')">
+                Men
+            </button>
+
+            <button onclick="filterFashion('Kids')">
+                Kids
+            </button>
+
+        </div>
+
+
+        <div
+            id="fashionProductsGrid"
+            class="products-grid">
+
+            <div class="loading">
+                Loading fashion...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            🛍️ ShopEase
+        </div>
+
+        <p>
+            Your simple and smarter way to shop online.
+        </p>
+
+        <p class="copyright">
+            © 2026 ShopEase. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/fashion.js"></script>
+
+</body>
+
+</html>

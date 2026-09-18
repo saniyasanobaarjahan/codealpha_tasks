@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase - Online Shopping</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Animated Border -->
+    <div class="animated-border"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            🛍️ ShopEase
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="orders.html">My Orders</a>
+            <a href="cart.html" class="cart-link">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </a>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+
+        <div class="welcome-content">
+
+            <p class="small-title">
+                ✨ Welcome to ShopEase
+            </p>
+
+            <h1 id="welcomeTitle">
+                Welcome 👋
+            </h1>
+
+            <p id="welcomeMessage">
+                Everything you love, all in one place.
+            </p>
+
+            <button
+                class="shop-now-btn"
+                onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+                Start Shopping →
+            </button>
+
+        </div>
+
+        <div class="welcome-image">
+            🛍️
+        </div>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section id="categories" class="section">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>Shop by Category</h2>
+
+            <span>
+                Find something you'll love
+            </span>
+
+        </div>
+
+
+        <div class="categories-grid">
+
+           <div class="category-card" onclick="window.location.href='fashion.html'">
+    <div class="category-icon">👗</div>
+    <h3>Fashion</h3>
+    <p>Women • Men • Kids</p>
+</div>
+            <div class="category-card" onclick="filterCategory('Electronics')">
+                <div class="category-icon">📱</div>
+                <h3>Electronics</h3>
+                <p>Latest gadgets</p>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Beauty')">
+                <div class="category-icon">💄</div>
+                <h3>Beauty</h3>
+                <p>Beauty essentials</p>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Home')">
+                <div class="category-icon">🏠</div>
+                <h3>Home</h3>
+                <p>Make home beautiful</p>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Footwear')">
+                <div class="category-icon">👟</div>
+                <h3>Footwear</h3>
+                <p>Step in style</p>
+            </div>
+
+           <div class="category-card" onclick="window.location.href='accessories.html'">
+    <div class="category-icon">💍</div>
+    <h3>Accessories</h3>
+    <p>Jewellery • Bags • Watches</p>
+</div>
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section id="products" class="section products-section">
+
+        <div class="section-heading">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>Featured Products</h2>
+
+            <span>
+                Pick your favorites
+            </span>
+
+        </div>
+
+        <div id="productsGrid" class="products-grid">
+
+            <div class="loading">
+                Loading products...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            🛍️ ShopEase
+        </div>
+
+        <p>
+            Your simple and smarter way to shop online.
+        </p>
+
+        <p class="copyright">
+            © 2026 ShopEase. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

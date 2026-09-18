@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a class="logo" href="index.html">
+            Shop<span>Ease</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+
+            <a href="cart.html">
+                Cart
+                <span id="cartCount" class="badge">0</span>
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- CHECKOUT PAGE -->
+    <main class="checkout-page">
+
+        <!-- Heading -->
+        <div class="checkout-heading">
+
+            <div class="checkout-eyebrow">
+                FINAL STEP
+            </div>
+
+            <h1>
+                Checkout
+            </h1>
+
+            <p>
+                Complete your delivery details and place your order.
+            </p>
+
+        </div>
+
+
+        <!-- Checkout Layout -->
+        <div class="checkout-layout">
+
+
+            <!-- LEFT: DELIVERY FORM -->
+            <div class="checkout-card">
+
+                <div class="checkout-card-header">
+
+                    <div class="checkout-icon">
+                        📦
+                    </div>
+
+                    <div>
+                        <h2>
+                            Delivery Details
+                        </h2>
+
+                        <p>
+                            Where should we deliver your order?
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="checkoutForm">
+
+
+                    <!-- Full Name -->
+                    <div class="checkout-field">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Address -->
+                    <div class="checkout-field">
+
+                        <label for="address">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            placeholder="Enter your complete delivery address"
+                            rows="4"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- City + Pincode -->
+                    <div class="checkout-two-columns">
+
+
+                        <div class="checkout-field">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="Enter your city"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="checkout-field">
+
+                            <label for="pincode">
+                                Pincode
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pincode"
+                                placeholder="6-digit pincode"
+                                pattern="[0-9]{6}"
+                                maxlength="6"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Message -->
+                    <p
+                        id="checkoutMessage"
+                        class="checkout-message"
+                    ></p>
+
+
+                    <!-- Place Order -->
+                    <button
+                        class="place-order-btn"
+                        type="submit"
+                    >
+                        <span>🛍️</span>
+                        Place Order
+                    </button>
+
+
+                    <a
+                        href="cart.html"
+                        class="back-cart"
+                    >
+                        ← Back to Cart
+                    </a>
+
+                </form>
+
+            </div>
+
+
+            <!-- RIGHT: ORDER INFO -->
+            <div class="checkout-summary-card">
+
+                <div class="summary-icon">
+                    🛒
+                </div>
+
+                <h2>
+                    Your Order
+                </h2>
+
+                <p>
+                    Your selected products are safely waiting in your cart.
+                </p>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Cart Items
+                    </span>
+
+                    <strong id="checkoutCartCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="secure-checkout">
+
+                    <span>
+                        🔒
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Secure Checkout
+                        </strong>
+
+                        <p>
+                            Your order details are protected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="shopping-note">
+
+                    ✨
+                    <span>
+                        Thank you for shopping with ShopEase!
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/app.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script src="js/checkout.js"></script>
+
+
+    <!-- Update checkout cart count -->
+    <script>
+
+        const cart =
+            JSON.parse(
+                localStorage.getItem("cart") || "[]"
+            );
+
+        const itemCount =
+            cart.reduce(
+                (total, item) =>
+                    total + Number(item.quantity || 0),
+                0
+            );
+
+        const checkoutCartCount =
+            document.getElementById(
+                "checkoutCartCount"
+            );
+
+        if (checkoutCartCount) {
+            checkoutCartCount.textContent =
+                itemCount;
+        }
+
+    </script>
+
+</body>
+
+</html>
